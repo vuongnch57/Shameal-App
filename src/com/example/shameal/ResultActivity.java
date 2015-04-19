@@ -1,15 +1,15 @@
 package com.example.shameal;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 
 public class ResultActivity extends Activity{
-	
 	private TextView ocrResultText;
-	private TextView numOfResult;
 	private String place;
-	private String num;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,19 +17,38 @@ public class ResultActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		Bundle bundle = getIntent().getExtras();
 		place = bundle.getString(CaptureActivity.text);
-		//num = bundle.getString(CaptureActivity.text2);
 		setContentView(R.layout.result);
 		ocrResultText = (TextView)findViewById(R.id.ocr_result_text);
-		//numOfResult = (TextView)findViewById(R.id.num_of_result);
-		
 		ocrResultText.setText(place);
-		//numOfResult.setText(num);
 	}
 
-	/*@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		// TODO Auto-generated method stub
-		super.onListItemClick(l, v, position, id);
-	}*/
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.activity_main_actions, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
 	
+	// fix to display split bar in tablet
+		@Override
+		public Resources getResources() {
+		    return new ResourceFix(super.getResources());
+		}
+
+		private class ResourceFix extends Resources {
+		    private int targetId = 0;
+
+		    ResourceFix(Resources resources) {
+		        super(resources.getAssets(), resources.getDisplayMetrics(), resources.getConfiguration());
+		        targetId = Resources.getSystem().getIdentifier("split_action_bar_is_narrow", "bool", "android");
+		    }
+
+		    /**
+		     * {@inheritDoc}
+		     */
+		    @Override
+		    public boolean getBoolean(int id) throws Resources.NotFoundException {
+		        return targetId == id || super.getBoolean(id);
+		    }
+		}
 }

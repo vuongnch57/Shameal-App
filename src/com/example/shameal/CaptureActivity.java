@@ -38,6 +38,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -698,12 +699,13 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     }
     
     // Display the name of the OCR engine we're initializing in the indeterminate progress dialog box
-    /*indeterminateDialog = new ProgressDialog(this);
+    indeterminateDialog = new ProgressDialog(this);
+    indeterminateDialog.setTitle("Initializing your capture...");
     indeterminateDialog.setCancelable(false);
-    indeterminateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-    indeterminateDialog.setIndeterminate(true);
+    //indeterminateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+    //indeterminateDialog.setIndeterminate(true);
     indeterminateDialog.show();
-    indeterminateDialog.setContentView(R.layout.my_progress);*/
+    //indeterminateDialog.setContentView(R.layout.my_progress);
     
     if (handler != null) {
       handler.quitSynchronously();
@@ -721,7 +723,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     
     // Start AsyncTask to install language data and init OCR
     baseApi = new TessBaseAPI();
-    new OcrInitAsyncTask(this, baseApi, dialog, languageCode, languageName, ocrEngineMode)
+    new OcrInitAsyncTask(this, baseApi, dialog, indeterminateDialog, languageCode, languageName, ocrEngineMode)
       .execute(storageRoot.toString());
     	
   }

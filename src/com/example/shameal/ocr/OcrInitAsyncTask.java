@@ -38,6 +38,7 @@ import org.xeustechnologies.jtar.TarInputStream;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
 
 import com.example.shameal.CaptureActivity;
@@ -67,7 +68,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
   private Context context;
   private TessBaseAPI baseApi;
   private ProgressDialog dialog;
-  //private ProgressDialog indeterminateDialog;
+  private ProgressDialog indeterminateDialog;
   private final String languageCode;
   private String languageName;
   private int ocrEngineMode;
@@ -91,13 +92,13 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
    *          Whether to use Tesseract, Cube, or both
    */
   public OcrInitAsyncTask(CaptureActivity activity, TessBaseAPI baseApi, ProgressDialog dialog, 
-       String languageCode, String languageName, 
+		  ProgressDialog indeterminateDialog, String languageCode, String languageName, 
       int ocrEngineMode) {
     this.activity = activity;
     this.context = activity.getBaseContext();
     this.baseApi = baseApi;
     this.dialog = dialog;
-    //this.indeterminateDialog = indeterminateDialog;
+    this.indeterminateDialog = indeterminateDialog;
     this.languageCode = languageCode;
     this.languageName = languageName;
     this.ocrEngineMode = ocrEngineMode;
@@ -694,6 +695,11 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
     super.onPostExecute(result);
     
     try {
+    	Handler handler = new Handler();
+    	handler.postDelayed(new Runnable() {
+    	    public void run() {
+    	        indeterminateDialog.dismiss();
+    	    }}, 3000);  // 3000 milliseconds
       //indeterminateDialog.dismiss();
     } catch (IllegalArgumentException e) {
       // Catch "View not attached to window manager" error, and continue
