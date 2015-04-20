@@ -43,6 +43,7 @@ int id action_home 0x7f090018
 int id action_search 0x7f090019
 int id action_settings 0x7f09001c
 int id camera_button_view 0x7f090012
+int id captureButton 0x7f09000b
 int id decode 0x7f090000
 int id decode_failed 0x7f090001
 int id decode_succeeded 0x7f090002
@@ -64,7 +65,6 @@ int id shutter_button 0x7f090014
 int id startpage 0x7f09000e
 int id status_view_bottom 0x7f090015
 int id status_view_top 0x7f090013
-int id textView1 0x7f09000b
 int id viewfinder_view 0x7f09000d
 int layout activity_main 0x7f030000
 int layout capture 0x7f030001

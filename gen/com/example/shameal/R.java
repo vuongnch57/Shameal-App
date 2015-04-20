@@ -113,6 +113,7 @@ public final class R {
         public static final int action_search=0x7f090019;
         public static final int action_settings=0x7f09001c;
         public static final int camera_button_view=0x7f090012;
+        public static final int captureButton=0x7f09000b;
         public static final int decode=0x7f090000;
         public static final int decode_failed=0x7f090001;
         public static final int decode_succeeded=0x7f090002;
@@ -134,7 +135,6 @@ public final class R {
         public static final int startpage=0x7f09000e;
         public static final int status_view_bottom=0x7f090015;
         public static final int status_view_top=0x7f090013;
-        public static final int textView1=0x7f09000b;
         public static final int viewfinder_view=0x7f09000d;
     }
     public static final class layout {

@@ -1,10 +1,12 @@
 package com.example.shameal;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class ResultActivity extends Activity{
@@ -20,13 +22,6 @@ public class ResultActivity extends Activity{
 		setContentView(R.layout.result);
 		ocrResultText = (TextView)findViewById(R.id.ocr_result_text);
 		ocrResultText.setText(place);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.activity_main_actions, menu);
-		return super.onCreateOptionsMenu(menu);
 	}
 	
 	// fix to display split bar in tablet
