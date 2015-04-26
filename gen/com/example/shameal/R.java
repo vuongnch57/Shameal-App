@@ -46,10 +46,14 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int feed_bg=0x7f07000c;
+        public static final int feed_item_bg=0x7f07000d;
+        public static final int feed_item_border=0x7f07000e;
         public static final int help_button_view=0x7f070000;
         /**  help button view background color 
          */
         public static final int help_view=0x7f070001;
+        public static final int link=0x7f07000f;
         /**  background color for entire help view 
          */
         public static final int result_minor_text=0x7f070002;
@@ -65,6 +69,7 @@ public final class R {
         /**  status_view_top/status_view_bottom text color 
          */
         public static final int status_top_text_background=0x7f070006;
+        public static final int timestamp=0x7f070010;
         /**  status_view_top text background color 
          */
         public static final int translation_text=0x7f070007;
@@ -77,6 +82,9 @@ public final class R {
         /**  viewfinder rectangle 
          */
         public static final int viewfinder_mask=0x7f07000a;
+        /**  viewfinder exterior darkened area 
+         */
+        public static final int white=0x7f07000b;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -88,60 +96,81 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f080000;
         public static final int activity_vertical_margin=0x7f080001;
+        public static final int feed_item_border_width=0x7f08000c;
+        public static final int feed_item_corner_radius=0x7f08000b;
+        public static final int feed_item_margin=0x7f080002;
+        public static final int feed_item_padding_left_right=0x7f080004;
+        public static final int feed_item_padding_top_bottom=0x7f080003;
+        public static final int feed_item_profile_info_padd=0x7f080006;
+        public static final int feed_item_profile_name=0x7f080007;
+        public static final int feed_item_profile_pic=0x7f080005;
+        public static final int feed_item_status_pad_left_right=0x7f080009;
+        public static final int feed_item_status_pad_top=0x7f08000a;
+        public static final int feed_item_timestamp=0x7f080008;
     }
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int background_pressed=0x7f020001;
-        public static final int camera=0x7f020002;
-        public static final int history=0x7f020003;
-        public static final int home=0x7f020004;
-        public static final int ic_action_new=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
-        public static final int icon=0x7f020007;
-        public static final int iris23=0x7f020008;
-        public static final int myprogress_style=0x7f020009;
-        public static final int search=0x7f02000a;
-        public static final int shutter=0x7f02000b;
-        public static final int shutter_button=0x7f02000c;
-        public static final int shutter_pressed=0x7f02000d;
-        public static final int startpage=0x7f02000e;
+        public static final int bg_parent_rounded_corner=0x7f020002;
+        public static final int camera=0x7f020003;
+        public static final int history=0x7f020004;
+        public static final int home=0x7f020005;
+        public static final int ic_action_new=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int icon=0x7f020008;
+        public static final int iris23=0x7f020009;
+        public static final int myprogress_style=0x7f02000a;
+        public static final int search=0x7f02000b;
+        public static final int shutter=0x7f02000c;
+        public static final int shutter_button=0x7f02000d;
+        public static final int shutter_pressed=0x7f02000e;
+        public static final int startpage=0x7f02000f;
     }
     public static final class id {
-        public static final int action_camera=0x7f09001a;
-        public static final int action_history=0x7f09001b;
-        public static final int action_home=0x7f090018;
-        public static final int action_search=0x7f090019;
-        public static final int action_settings=0x7f09001c;
-        public static final int camera_button_view=0x7f090012;
+        public static final int about=0x7f09000c;
+        public static final int action_camera=0x7f090021;
+        public static final int action_history=0x7f090022;
+        public static final int action_home=0x7f09001f;
+        public static final int action_search=0x7f090020;
+        public static final int action_settings=0x7f090023;
+        public static final int address=0x7f090019;
+        public static final int camera_button_view=0x7f090013;
         public static final int captureButton=0x7f09000b;
         public static final int decode=0x7f090000;
         public static final int decode_failed=0x7f090001;
         public static final int decode_succeeded=0x7f090002;
-        public static final int image_view=0x7f090010;
-        public static final int num_of_result=0x7f090017;
+        public static final int description=0x7f09001a;
+        public static final int feedImage1=0x7f09001c;
+        public static final int image=0x7f090017;
+        public static final int image_view=0x7f090011;
+        public static final int name=0x7f090018;
+        public static final int num_of_result=0x7f09001e;
         public static final int ocr_continuous_decode=0x7f090003;
         public static final int ocr_continuous_decode_failed=0x7f090004;
         public static final int ocr_continuous_decode_succeeded=0x7f090005;
         public static final int ocr_decode=0x7f090006;
         public static final int ocr_decode_failed=0x7f090007;
         public static final int ocr_decode_succeeded=0x7f090008;
-        public static final int ocr_result_text=0x7f090016;
-        public static final int ocr_result_text_view=0x7f090011;
-        public static final int preview_view=0x7f09000c;
+        public static final int ocr_result_text=0x7f09001d;
+        public static final int ocr_result_text_view=0x7f090012;
+        public static final int preview_view=0x7f09000d;
         public static final int quit=0x7f090009;
+        public static final int rate=0x7f09001b;
         public static final int restart_preview=0x7f09000a;
-        public static final int result_view=0x7f09000f;
-        public static final int shutter_button=0x7f090014;
-        public static final int startpage=0x7f09000e;
-        public static final int status_view_bottom=0x7f090015;
-        public static final int status_view_top=0x7f090013;
-        public static final int viewfinder_view=0x7f09000d;
+        public static final int result_view=0x7f090010;
+        public static final int shutter_button=0x7f090015;
+        public static final int startpage=0x7f09000f;
+        public static final int status_view_bottom=0x7f090016;
+        public static final int status_view_top=0x7f090014;
+        public static final int viewfinder_view=0x7f09000e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int capture=0x7f030001;
-        public static final int my_progress=0x7f030002;
-        public static final int result=0x7f030003;
+        public static final int feed_item=0x7f030002;
+        public static final int my_progress=0x7f030003;
+        public static final int place=0x7f030004;
+        public static final int result=0x7f030005;
     }
     public static final class menu {
         public static final int activity_main_actions=0x7f0c0000;

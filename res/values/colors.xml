@@ -11,4 +11,11 @@
   <color name="viewfinder_corners">#ffffffff</color> <!-- four corner elements for viewfinder -->
   <color name="viewfinder_frame">#ffd6d6d6</color> <!-- viewfinder rectangle -->
   <color name="viewfinder_mask">#60000000</color>  <!-- viewfinder exterior darkened area -->
+  
+  <color name="white">#ffffff</color>
+    <color name="feed_bg">#d3d6db</color>
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+    <color name="timestamp">#a0a3a7</color>
 </resources>
