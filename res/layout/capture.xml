@@ -29,12 +29,6 @@
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
       android:background="#0000"/>
-  
-  <ImageView
-        android:id="@+id/startpage"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:src="@drawable/startpage" />
 
   <LinearLayout android:id="@+id/result_view"
                 android:orientation="vertical"

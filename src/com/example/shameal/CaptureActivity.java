@@ -29,6 +29,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -176,8 +177,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
   private static final int OPTIONS_SHARE_RECOGNIZED_TEXT_ID = Menu.FIRST + 2;
   private static final int OPTIONS_SHARE_TRANSLATED_TEXT_ID = Menu.FIRST + 3;
 
-  //private ProgressBarDeterminate p;
-  private ImageView startupView;
   private CameraManager cameraManager;
   private CaptureActivityHandler handler;
   private ViewfinderView viewfinderView;
@@ -244,7 +243,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
     cameraButtonView = findViewById(R.id.camera_button_view);
     resultView = findViewById(R.id.result_view);
-    startupView = (ImageView)findViewById(R.id.startpage);
     //p = (ProgressBarDeterminate)findViewById(R.id.progressDeterminate);
     
     statusViewBottom = (TextView) findViewById(R.id.status_view_bottom);
@@ -399,7 +397,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
    * and requests camera initialization.
    */
   public void resumeOCR() {
-	  startupView.setVisibility(View.INVISIBLE); // invisible loading page
+	  
 	  //p.setVisibility(View.INVISIBLE);
     Log.d(TAG, "resumeOCR()");
     
@@ -700,7 +698,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     
     // Display the name of the OCR engine we're initializing in the indeterminate progress dialog box
     indeterminateDialog = new ProgressDialog(this);
-    indeterminateDialog.setTitle("Initializing your capture...");
+    indeterminateDialog.setTitle("Vui lòng đợi...");
     indeterminateDialog.setCancelable(false);
     //indeterminateDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
     //indeterminateDialog.setIndeterminate(true);
@@ -728,43 +726,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     	
   }
   
-  private Socket client;
-  private PrintWriter printwriter;
-  private BufferedReader in;
-  private class SendMessage extends AsyncTask<Void, Void, Void> {
-	  
-		@Override
-		protected Void doInBackground(Void... params) {
-			try {
-
-				client = new Socket("128.199.160.37", 12055); // connect to the server
-				printwriter = new PrintWriter(client.getOutputStream(), true);
-				printwriter.write("starbuck"); // write the message to output stream
-
-				printwriter.flush();
-				printwriter.close();
-				in = new BufferedReader(
-				        new InputStreamReader(client.getInputStream()));
-//				Log.i("System.out","Hello!");
-				client.close(); // closing the connection
-
-			} catch (UnknownHostException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-
-	}
-  
   /**
    * Displays information relating to the result of OCR, and requests a translation if necessary.
    * 
    * @param ocrResult Object representing successful OCR results
    * @return True if a non-null result was received for OCR
    */
-  public static String text2;
   
   public boolean handleOcrDecode(OcrResult ocrResult) {
     lastResult = ocrResult;
@@ -805,35 +772,7 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     
     Intent intent = new Intent(CaptureActivity.this, ResultActivity.class);
 	intent.putExtra(text, ocrResult.getText());
-	//intent.putExtra(text2, in.toString());
     startActivity(intent);
-
-    /*TextView translationLanguageLabelTextView = (TextView) findViewById(R.id.translation_language_label_text_view);
-    TextView translationLanguageTextView = (TextView) findViewById(R.id.translation_language_text_view);
-    TextView translationTextView = (TextView) findViewById(R.id.translation_text_view);*/
-    /*if (isTranslationActive) {
-      // Handle translation text fields
-      translationLanguageLabelTextView.setVisibility(View.VISIBLE);
-      translationLanguageTextView.setText(targetLanguageReadable);
-      translationLanguageTextView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL), Typeface.NORMAL);
-      translationLanguageTextView.setVisibility(View.VISIBLE);
-
-      // Activate/re-activate the indeterminate progress indicator
-      translationTextView.setVisibility(View.GONE);
-      progressView.setVisibility(View.VISIBLE);
-      setProgressBarVisibility(true);
-      
-      // Get the translation asynchronously
-      new TranslateAsyncTask(this, sourceLanguageCodeTranslation, targetLanguageCodeTranslation, 
-          ocrResult.getText()).execute();
-    } else {
-      translationLanguageLabelTextView.setVisibility(View.GONE);
-      translationLanguageTextView.setVisibility(View.GONE);
-      translationTextView.setVisibility(View.GONE);
-      progressView.setVisibility(View.GONE);
-      setProgressBarVisibility(false);
-    }*/
-    
     return true;
   }
   
@@ -873,9 +812,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     if (CONTINUOUS_DISPLAY_METADATA) {
       // Display recognition-related metadata at the bottom of the screen
       long recognitionTimeRequired = ocrResult.getRecognitionTimeRequired();
-      /*statusViewBottom.setTextSize(14);
-      statusViewBottom.setText("OCR: " + sourceLanguageReadable + " - Mean confidence: " + 
-          meanConfidence.toString() + " - Time required: " + recognitionTimeRequired + " ms");*/
     }
   }
   
@@ -890,14 +826,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     
     // Reset the text in the recognized text box.
     statusViewTop.setText("");
-
-    if (CONTINUOUS_DISPLAY_METADATA) {
-      // Color text delimited by '-' as red.
-      /*statusViewBottom.setTextSize(14);
-      CharSequence cs = setSpanBetweenTokens("OCR: " + sourceLanguageReadable + " - OCR failed - Time required: " 
-          + obj.getTimeRequired() + " ms", "-", new ForegroundColorSpan(0xFFFF0000));
-      statusViewBottom.setText(cs);*/
-    }
   }
   
   /**
@@ -1006,22 +934,12 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
     viewfinderView.removeResultText();
   }
   
-  /** Displays a pop-up message showing the name of the current OCR source language. */
-  /*void showLanguageName() {   
-    Toast toast = Toast.makeText(this, "OCR: " + sourceLanguageReadable, Toast.LENGTH_LONG);
-    toast.setGravity(Gravity.TOP, 0, 0);
-    toast.show();
-  }*/
-  
   /**
    * Displays an initial message to the user while waiting for the first OCR request to be
    * completed after starting realtime OCR.
    */
   public void setStatusViewForContinuous() {
     viewfinderView.removeResultText();
-    /*if (CONTINUOUS_DISPLAY_METADATA) {
-      statusViewBottom.setText("OCR: " + sourceLanguageReadable + " - waiting for OCR...");
-    }*/
   }
   
   @SuppressWarnings("unused")
@@ -1095,19 +1013,6 @@ public
       } else {
         isFirstLaunch = false;
       }
-      /*if (currentVersion > lastVersion) {
-        
-        // Record the last version for which we last displayed the What's New (Help) page
-        prefs.edit().putInt(PreferencesActivity.KEY_HELP_VERSION_SHOWN, currentVersion).commit();
-        Intent intent = new Intent(this, HelpActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-        
-        // Show the default page on a clean install, and the what's new page on an upgrade.
-        String page = lastVersion == 0 ? HelpActivity.DEFAULT_PAGE : HelpActivity.WHATS_NEW_PAGE;
-        intent.putExtra(HelpActivity.REQUESTED_PAGE_KEY, page);
-        startActivity(intent);
-        return true;
-      }*/
     } catch (PackageManager.NameNotFoundException e) {
       Log.w(TAG, e);
     }
@@ -1209,12 +1114,6 @@ public
     // Translation
     prefs.edit().putBoolean(PreferencesActivity.KEY_TOGGLE_TRANSLATION, CaptureActivity.DEFAULT_TOGGLE_TRANSLATION).commit();
 
-    // Translation target language
-    //prefs.edit().putString(PreferencesActivity.KEY_TARGET_LANGUAGE_PREFERENCE, CaptureActivity.DEFAULT_TARGET_LANGUAGE_CODE).commit();
-
-    // Translator
-    //prefs.edit().putString(PreferencesActivity.KEY_TRANSLATOR, CaptureActivity.DEFAULT_TRANSLATOR).commit();
-
     // OCR Engine
     prefs.edit().putString(PreferencesActivity.KEY_OCR_ENGINE_MODE, CaptureActivity.DEFAULT_OCR_ENGINE_MODE).commit();
 
@@ -1250,12 +1149,7 @@ public
     indeterminateDialog = new ProgressDialog(this);
     //indeterminateDialog.setTitle("Please wait");        
     String ocrEngineModeName = getOcrEngineModeName();
-    /*if (ocrEngineModeName.equals("Both")) {
-      indeterminateDialog.setMessage("Performing OCR using Cube and Tesseract...");
-    } else {
-      indeterminateDialog.setMessage("Performing OCR using " + ocrEngineModeName + "...");
-    }*/
-    indeterminateDialog.setMessage("Processing...");
+    indeterminateDialog.setMessage("Đang xử lý...");
     indeterminateDialog.setCancelable(false);
     indeterminateDialog.show();
   }
@@ -1278,4 +1172,5 @@ public
 	    .setPositiveButton( "Done", new FinishListener(this))
 	    .show();
   }
+
 }

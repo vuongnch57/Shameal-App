@@ -5,8 +5,11 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,10 +23,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		if(isInternetOn()==false) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		    builder.setTitle("Alert")
-		    	   .setMessage("Please connect to internet before start.")
+		    builder.setTitle("Cảnh báo !!!")
+		    	   .setMessage("Kết nối Internet trước khi bắt đầu.")
 		           .setCancelable(false)
-		           .setPositiveButton("Quit", new DialogInterface.OnClickListener() {
+		           .setPositiveButton("Thoát", new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		                    MainActivity.this.finish();
 		               }
@@ -33,6 +36,10 @@ public class MainActivity extends Activity {
 		} else {
 			setContentView(R.layout.activity_main);
 			startCapture = (Button) findViewById(R.id.captureButton);
+			
+			getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#488214")));
+	        getActionBar().setIcon(
+	                   new ColorDrawable(getResources().getColor(android.R.color.transparent)));
 		}
 	}
 	
@@ -67,4 +74,22 @@ public class MainActivity extends Activity {
             }
           return false;
      }
+
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		//super.onBackPressed();
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    builder.setMessage("Thoát ứng dụng?")
+	           .setCancelable(true)
+	           .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	               public void onClick(DialogInterface dialog, int id) {
+	                    MainActivity.this.finish();
+	               }
+	           })
+	           .setNegativeButton("Cancel", null);
+	    AlertDialog alert = builder.create();
+	    alert.show();
+	}
+
 }

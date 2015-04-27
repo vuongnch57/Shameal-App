@@ -107,8 +107,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
   @Override
   protected void onPreExecute() {
     super.onPreExecute();
-    dialog.setTitle("Please wait");
-    dialog.setMessage("Checking for data installation...");
+    dialog.setMessage("Kiểm tra dữ liệu cho lần chạy đầu tiên...");
     dialog.setIndeterminate(false);
     dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
     dialog.setCancelable(false);
@@ -362,7 +361,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
       throws IOException {
     // Send an HTTP GET request for the file
     Log.d(TAG, "Sending GET request to " + url + "...");
-    publishProgress("Downloading data ...", "0");
+    publishProgress("Đang tải dữ liệu ...", "0");
     HttpURLConnection urlConnection = null;
     urlConnection = (HttpURLConnection) url.openConnection();
     urlConnection.setAllowUserInteraction(false);
@@ -399,7 +398,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
       percentComplete = (int) ((downloaded / (float) fileSize) * 100);
       if (percentComplete > percentCompleteLast) {
         publishProgress(
-            "Downloading data ...",
+            "Đang tải dữ liệu ...",
             percentComplete.toString());
         percentCompleteLast = percentComplete;
       }
@@ -442,7 +441,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
     int unzippedBytes = 0;
     final Integer progressMin = 0;
     int progressMax = 100 - progressMin;
-    publishProgress("Uncompressing data ...",
+    publishProgress("Giải nén dữ liệu ...",
         progressMin.toString());
 
     // If the file is a tar file, just show progress to 50%
@@ -467,7 +466,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
           + progressMin;
 
       if (percentComplete > percentCompleteLast) {
-        publishProgress("Uncompressing data ...", percentComplete.toString());
+        publishProgress("Giải nén dữ liệu ...", percentComplete.toString());
         percentCompleteLast = percentComplete;
       }
     }
@@ -519,7 +518,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
     int unzippedBytes = 0;
     final Integer progressMin = 50;
     final int progressMax = 100 - progressMin;
-    publishProgress("Uncompressing data ...",
+    publishProgress("Giải nén dữ liệu ...",
         progressMin.toString());
 
     // Extract all the files
@@ -542,7 +541,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
         percentComplete = (int) ((unzippedBytes / (float) uncompressedSize) * progressMax)
             + progressMin;
         if (percentComplete > percentCompleteLast) {
-          publishProgress("Uncompressing data ...", 
+          publishProgress("Giải nén dữ liệu ...", 
               percentComplete.toString());
           percentCompleteLast = percentComplete;
         }
@@ -626,7 +625,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
       File destinationDir, File destinationFile) throws IOException,
       FileNotFoundException {
     // Attempt to open the zip archive
-    publishProgress("Uncompressing data ...", "0");
+    publishProgress("Giải nén dữ liệu ...", "0");
     ZipInputStream inputStream = new ZipInputStream(context.getAssets().open(sourceFilename));
 
     // Loop through all the files and folders in the zip archive (but there should just be one)
@@ -658,7 +657,7 @@ public final class OcrInitAsyncTask extends AsyncTask<String, String, Boolean> {
           unzippedSize += count;
           percentComplete = (int) ((unzippedSize / (long) zippedFileSize) * 100);
           if (percentComplete > percentCompleteLast) {
-            publishProgress("Uncompressing data ...", 
+            publishProgress("Giải nén dữ liệu ...", 
                 percentComplete.toString(), "0");
             percentCompleteLast = percentComplete;
           }

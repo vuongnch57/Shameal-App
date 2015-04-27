@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+encoding//src/com/example/shameal/CaptureActivity.java=UTF-8
+encoding//src/com/example/shameal/MainActivity.java=UTF-8
+encoding//src/com/example/shameal/PlaceActivity.java=UTF-8
 encoding//src/com/example/shameal/ResultActivity.java=UTF-8
+encoding//src/com/example/shameal/handler/CaptureActivityHandler.java=UTF-8
+encoding//src/com/example/shameal/ocr/OcrInitAsyncTask.java=UTF-8

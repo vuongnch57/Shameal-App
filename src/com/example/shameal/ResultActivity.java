@@ -15,8 +15,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,6 +57,10 @@ public class ResultActivity extends ListActivity{
 		ocrResultText = (TextView)findViewById(R.id.ocr_result_text);
 		ocrResultText.setText(place);
 
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#488214")));
+        getActionBar().setIcon(
+                   new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+		
 		listView = (ListView) findViewById(android.R.id.list);
         feedItems = new ArrayList<FeedItem>();
         listAdapter = new FeedListAdapter(this, feedItems);
@@ -80,11 +88,11 @@ public class ResultActivity extends ListActivity{
 					printwriter.println("La Place Cafe");
 					printwriter.flush();
 					
-					while ((bytesRead = inputStream.read(buffer)) != -1){
+					/*while ((bytesRead = inputStream.read(buffer)) != -1){
 		                 byteArrayOutputStream.write(buffer, 0, bytesRead);
 		                 msg += byteArrayOutputStream.toString("UTF-8");
-		             }
-//					msg = in.readLine();
+		             }*/
+					msg = in.readLine();
 					Log.i("FromServer", msg);
 					inputStream.close();
 					in.close();
@@ -114,15 +122,15 @@ public class ResultActivity extends ListActivity{
 			                item.setName(feedObj.getString("name"));
 			                item.setAddress(feedObj.getString("address"));
 			                item.setDescription(feedObj.getString("description"));
-							String image = feedObj.isNull("image") ? null : feedObj
-									.getString("image");
+							String image = feedObj.isNull("avatar") ? null : feedObj
+									.getString("avatar");
 							item.setImage(image);
 							
 							String tele = feedObj.isNull("telephone") ? null : feedObj
 									.getString("telephone");
 
-							String menu = feedObj.isNull("menu") ? null : feedObj
-									.getString("menu");
+							String menu = feedObj.isNull("image1") ? null : feedObj
+									.getString("image1");
 							item.setMenu(menu);
 							
 							item.setRate(feedObj.getInt("rate"));
@@ -132,8 +140,8 @@ public class ResultActivity extends ListActivity{
 						}
 						listAdapter.notifyDataSetChanged();
 						
-						String numResult = "Number of Result: ";
-						numResult = numResult + jsonArr.length();
+						String numResult = "Tìm thấy ";
+						numResult = numResult + jsonArr.length() + " địa điểm";
 						numOfResult.setText(numResult);
 					} catch (JSONException e) {
 						// TODO Auto-generated catch block
@@ -150,5 +158,23 @@ public class ResultActivity extends ListActivity{
 			Intent intent = new Intent(this, PlaceActivity.class);
 			//intent.putExtra(Variables.LINK, items.get(position).getLink());
 			startActivity(intent);
+		}
+	 
+	 @Override
+		public void onBackPressed() {
+			// TODO Auto-generated method stub
+			//super.onBackPressed();
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		    builder.setMessage("Thoát ứng dụng?")
+		           .setCancelable(true)
+		           .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		               public void onClick(DialogInterface dialog, int id) {
+		                    ResultActivity.this.finish();
+		                    System.exit(0);
+		               }
+		           })
+		           .setNegativeButton("Cancel", null);
+		    AlertDialog alert = builder.create();
+		    alert.show();
 		}
 }
