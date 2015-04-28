@@ -4,13 +4,12 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.Html;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
-import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -26,6 +25,7 @@ public class FeedListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<FeedItem> feedItems;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    private int lastPosition = -1;
  
     public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
         this.activity = activity;
@@ -109,6 +109,11 @@ public class FeedListAdapter extends BaseAdapter {
             feedImageView.setVisibility(View.GONE);
         }
  
+        Animation animation = new TranslateAnimation(0, 0, (position > lastPosition) ? 100 : -100, 0);
+        animation.setDuration(400);
+        convertView.startAnimation(animation);
+        lastPosition = position;
+        
         return convertView;
     }
  

@@ -40,6 +40,7 @@ public class ResultActivity extends ListActivity{
 	private PrintWriter printwriter;
 	String message;
 	private BufferedReader in;
+	public static String json;
 	
 	private static final String TAG = ResultActivity.class.getSimpleName();
     private ListView listView;
@@ -85,7 +86,7 @@ public class ResultActivity extends ListActivity{
 					in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 					InputStream inputStream = client.getInputStream();
 //					printwriter.println(place); // write the message to output stream
-					printwriter.println("La Place Cafe");
+					printwriter.println("KFC");
 					printwriter.flush();
 					
 					/*while ((bytesRead = inputStream.read(buffer)) != -1){
@@ -112,6 +113,7 @@ public class ResultActivity extends ListActivity{
 				if (msg != null) {
 					try {
 						String result = "";
+						json = msg;
 						jsonArr = new JSONArray(msg);
 						for (int i=0; i<jsonArr.length(); i++) {
 							//result = result + jsonArr.get(i).toString() + '\n';
@@ -156,25 +158,9 @@ public class ResultActivity extends ListActivity{
 			// TODO Auto-generated method stub
 			super.onListItemClick(l, v, position, id);
 			Intent intent = new Intent(this, PlaceActivity.class);
-			//intent.putExtra(Variables.LINK, items.get(position).getLink());
+			
+			intent.putExtra(json, json);
 			startActivity(intent);
 		}
-	 
-	 @Override
-		public void onBackPressed() {
-			// TODO Auto-generated method stub
-			//super.onBackPressed();
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		    builder.setMessage("Thoát ứng dụng?")
-		           .setCancelable(true)
-		           .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-		               public void onClick(DialogInterface dialog, int id) {
-		                    ResultActivity.this.finish();
-		                    System.exit(0);
-		               }
-		           })
-		           .setNegativeButton("Cancel", null);
-		    AlertDialog alert = builder.create();
-		    alert.show();
-		}
+
 }

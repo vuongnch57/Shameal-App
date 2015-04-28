@@ -8,83 +8,87 @@
 package com.example.shameal;
 
 public final class R {
+    public static final class anim {
+        public static final int down_from_top=0x7f040000;
+        public static final int up_from_bottom=0x7f040001;
+    }
     public static final class array {
-        public static final int capturemodes=0x7f060000;
+        public static final int capturemodes=0x7f070000;
         /**  Unused 
  Vietnamese 
          */
-        public static final int iso6391=0x7f060006;
+        public static final int iso6391=0x7f070006;
         /**  The elements in this array must match to the languagenames array. 
  Vietnamese 
          */
-        public static final int iso6393=0x7f060005;
+        public static final int iso6393=0x7f070005;
         /**  The elements in this array must match to the iso6393 array. 
          */
-        public static final int languagenames=0x7f060004;
-        public static final int ocrenginemodes=0x7f060002;
-        public static final int pagesegmentationmodes=0x7f060001;
+        public static final int languagenames=0x7f070004;
+        public static final int ocrenginemodes=0x7f070002;
+        public static final int pagesegmentationmodes=0x7f070001;
         /**  Translation target codes for Google Translate. 
  The elements in this array must match to the translationtargetlanguagenames_google array. 
  Yiddish 
          */
-        public static final int translationtargetiso6391_google=0x7f060007;
+        public static final int translationtargetiso6391_google=0x7f070007;
         /**  Translation target language codes for the Microsoft Translate API. 
  The elements in this array must match to the translationtargetlanguagenames_microsoft array. 
  Vietnamese 
          */
-        public static final int translationtargetiso6391_microsoft=0x7f060009;
+        public static final int translationtargetiso6391_microsoft=0x7f070009;
         /**  Translation target names for Google Translate. 
  The elements in this array must match to the translationtargetiso6391_google array. 
          */
-        public static final int translationtargetlanguagenames_google=0x7f060008;
+        public static final int translationtargetlanguagenames_google=0x7f070008;
         /**  Translation target names for the Microsoft Translate API. 
  The elements in this array must match to the translationtargetiso6391_microsoft array. 
          */
-        public static final int translationtargetlanguagenames_microsoft=0x7f06000a;
-        public static final int translators=0x7f060003;
+        public static final int translationtargetlanguagenames_microsoft=0x7f07000a;
+        public static final int translators=0x7f070003;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int feed_bg=0x7f07000c;
-        public static final int feed_item_bg=0x7f07000d;
-        public static final int feed_item_border=0x7f07000e;
-        public static final int help_button_view=0x7f070000;
+        public static final int feed_bg=0x7f08000c;
+        public static final int feed_item_bg=0x7f08000d;
+        public static final int feed_item_border=0x7f08000e;
+        public static final int help_button_view=0x7f080000;
         /**  help button view background color 
          */
-        public static final int help_view=0x7f070001;
-        public static final int link=0x7f07000f;
+        public static final int help_view=0x7f080001;
+        public static final int link=0x7f08000f;
         /**  background color for entire help view 
          */
-        public static final int result_minor_text=0x7f070002;
+        public static final int result_minor_text=0x7f080002;
         /**  source language text/label text color. For example, "OCR English" 
          */
-        public static final int result_text=0x7f070003;
+        public static final int result_text=0x7f080003;
         /**  OCR result text color 
          */
-        public static final int result_view=0x7f070004;
+        public static final int result_view=0x7f080004;
         /**  result view background color 
          */
-        public static final int status_text=0x7f070005;
+        public static final int status_text=0x7f080005;
         /**  status_view_top/status_view_bottom text color 
          */
-        public static final int status_top_text_background=0x7f070006;
-        public static final int timestamp=0x7f070010;
+        public static final int status_top_text_background=0x7f080006;
+        public static final int timestamp=0x7f080010;
         /**  status_view_top text background color 
          */
-        public static final int translation_text=0x7f070007;
+        public static final int translation_text=0x7f080007;
         /**  translation text color 
          */
-        public static final int viewfinder_corners=0x7f070008;
+        public static final int viewfinder_corners=0x7f080008;
         /**  four corner elements for viewfinder 
          */
-        public static final int viewfinder_frame=0x7f070009;
+        public static final int viewfinder_frame=0x7f080009;
         /**  viewfinder rectangle 
          */
-        public static final int viewfinder_mask=0x7f07000a;
+        public static final int viewfinder_mask=0x7f08000a;
         /**  viewfinder exterior darkened area 
          */
-        public static final int white=0x7f07000b;
+        public static final int white=0x7f08000b;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -94,19 +98,19 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f080000;
-        public static final int activity_vertical_margin=0x7f080001;
-        public static final int feed_item_border_width=0x7f08000c;
-        public static final int feed_item_corner_radius=0x7f08000b;
-        public static final int feed_item_margin=0x7f080002;
-        public static final int feed_item_padding_left_right=0x7f080004;
-        public static final int feed_item_padding_top_bottom=0x7f080003;
-        public static final int feed_item_profile_info_padd=0x7f080006;
-        public static final int feed_item_profile_name=0x7f080007;
-        public static final int feed_item_profile_pic=0x7f080005;
-        public static final int feed_item_status_pad_left_right=0x7f080009;
-        public static final int feed_item_status_pad_top=0x7f08000a;
-        public static final int feed_item_timestamp=0x7f080008;
+        public static final int activity_horizontal_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090001;
+        public static final int feed_item_border_width=0x7f09000c;
+        public static final int feed_item_corner_radius=0x7f09000b;
+        public static final int feed_item_margin=0x7f090002;
+        public static final int feed_item_padding_left_right=0x7f090004;
+        public static final int feed_item_padding_top_bottom=0x7f090003;
+        public static final int feed_item_profile_info_padd=0x7f090006;
+        public static final int feed_item_profile_name=0x7f090007;
+        public static final int feed_item_profile_pic=0x7f090005;
+        public static final int feed_item_status_pad_left_right=0x7f090009;
+        public static final int feed_item_status_pad_top=0x7f09000a;
+        public static final int feed_item_timestamp=0x7f090008;
     }
     public static final class drawable {
         public static final int background=0x7f020000;
@@ -127,41 +131,42 @@ public final class R {
         public static final int startpage=0x7f02000f;
     }
     public static final class id {
-        public static final int about=0x7f09000c;
-        public static final int action_camera=0x7f090020;
-        public static final int action_history=0x7f090021;
-        public static final int action_home=0x7f09001e;
-        public static final int action_search=0x7f09001f;
-        public static final int action_settings=0x7f090022;
-        public static final int address=0x7f090018;
-        public static final int camera_button_view=0x7f090012;
-        public static final int captureButton=0x7f09000b;
-        public static final int decode=0x7f090000;
-        public static final int decode_failed=0x7f090001;
-        public static final int decode_succeeded=0x7f090002;
-        public static final int description=0x7f090019;
-        public static final int feedImage1=0x7f09001b;
-        public static final int image=0x7f090016;
-        public static final int image_view=0x7f090010;
-        public static final int name=0x7f090017;
-        public static final int num_of_result=0x7f09001d;
-        public static final int ocr_continuous_decode=0x7f090003;
-        public static final int ocr_continuous_decode_failed=0x7f090004;
-        public static final int ocr_continuous_decode_succeeded=0x7f090005;
-        public static final int ocr_decode=0x7f090006;
-        public static final int ocr_decode_failed=0x7f090007;
-        public static final int ocr_decode_succeeded=0x7f090008;
-        public static final int ocr_result_text=0x7f09001c;
-        public static final int ocr_result_text_view=0x7f090011;
-        public static final int preview_view=0x7f09000d;
-        public static final int quit=0x7f090009;
-        public static final int rate=0x7f09001a;
-        public static final int restart_preview=0x7f09000a;
-        public static final int result_view=0x7f09000f;
-        public static final int shutter_button=0x7f090014;
-        public static final int status_view_bottom=0x7f090015;
-        public static final int status_view_top=0x7f090013;
-        public static final int viewfinder_view=0x7f09000e;
+        public static final int about=0x7f0a000c;
+        public static final int action_camera=0x7f0a0021;
+        public static final int action_history=0x7f0a0022;
+        public static final int action_home=0x7f0a001f;
+        public static final int action_search=0x7f0a0020;
+        public static final int action_settings=0x7f0a0023;
+        public static final int address=0x7f0a0018;
+        public static final int camera_button_view=0x7f0a0012;
+        public static final int captureButton=0x7f0a000b;
+        public static final int decode=0x7f0a0000;
+        public static final int decode_failed=0x7f0a0001;
+        public static final int decode_succeeded=0x7f0a0002;
+        public static final int description=0x7f0a0019;
+        public static final int feedImage1=0x7f0a001b;
+        public static final int image=0x7f0a0016;
+        public static final int image_view=0x7f0a0010;
+        public static final int name=0x7f0a0017;
+        public static final int num_of_result=0x7f0a001e;
+        public static final int ocr_continuous_decode=0x7f0a0003;
+        public static final int ocr_continuous_decode_failed=0x7f0a0004;
+        public static final int ocr_continuous_decode_succeeded=0x7f0a0005;
+        public static final int ocr_decode=0x7f0a0006;
+        public static final int ocr_decode_failed=0x7f0a0007;
+        public static final int ocr_decode_succeeded=0x7f0a0008;
+        public static final int ocr_result_text=0x7f0a001d;
+        public static final int ocr_result_text_view=0x7f0a0011;
+        public static final int preview_view=0x7f0a000d;
+        public static final int quit=0x7f0a0009;
+        public static final int rate=0x7f0a001a;
+        public static final int restart_preview=0x7f0a000a;
+        public static final int result_view=0x7f0a000f;
+        public static final int shutter_button=0x7f0a0014;
+        public static final int status_view_bottom=0x7f0a0015;
+        public static final int status_view_top=0x7f0a0013;
+        public static final int textView1=0x7f0a001c;
+        public static final int viewfinder_view=0x7f0a000e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -172,16 +177,16 @@ public final class R {
         public static final int result=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_main_actions=0x7f0c0000;
-        public static final int main=0x7f0c0001;
+        public static final int activity_main_actions=0x7f0d0000;
+        public static final int main=0x7f0d0001;
     }
     public static final class raw {
-        public static final int beep=0x7f050000;
+        public static final int beep=0x7f060000;
     }
     public static final class string {
-        public static final int action_settings=0x7f0a0002;
-        public static final int app_name=0x7f0a0000;
-        public static final int hello_world=0x7f0a0001;
+        public static final int action_settings=0x7f0b0002;
+        public static final int app_name=0x7f0b0000;
+        public static final int hello_world=0x7f0b0001;
     }
     public static final class style {
         /** 
@@ -205,15 +210,15 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppBaseTheme=0x7f0c0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0b0001;
-        public static final int MyTabTextStyle=0x7f0b0002;
+        public static final int AppTheme=0x7f0c0001;
+        public static final int MyTabTextStyle=0x7f0c0002;
     }
     public static final class xml {
-        public static final int preferences=0x7f040000;
+        public static final int preferences=0x7f050000;
     }
     public static final class styleable {
         /** Attributes that can be used with a ViewfinderView.
