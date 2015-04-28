@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="E:/adt-bundle-windows-x86-20140702/workspace/Shameal/libs/volley.jar"/>
+	<classpathentry kind="lib" path="E:/adt-bundle-windows-x86-20140702/workspace/Shameal/libs/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

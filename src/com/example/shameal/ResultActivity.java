@@ -40,7 +40,8 @@ public class ResultActivity extends ListActivity{
 	private PrintWriter printwriter;
 	String message;
 	private BufferedReader in;
-	public static String json;
+	public static String json = "";
+	public static JSONArray jsonArr;
 	
 	private static final String TAG = ResultActivity.class.getSimpleName();
     private ListView listView;
@@ -109,12 +110,12 @@ public class ResultActivity extends ListActivity{
 			}
 			
 			protected void onPostExecute(String msg) { //hien thi sau khi lay du lieu tu server 
-				JSONArray jsonArr;
+				
 				if (msg != null) {
 					try {
 						String result = "";
 						int j=0;
-						while(j<20) {
+						while(j<10) {
 							msg = msg.replace("\\xe0", "à");
 							msg = msg.replace("\\xe1", "á");
 							msg = msg.replace("\\xe2", "â");
@@ -259,7 +260,7 @@ public class ResultActivity extends ListActivity{
 						}
 						Log.i("FromServer", msg);
 						
-						json = msg;
+						//json = msg;
 						jsonArr = new JSONArray(msg);
 						for (int i=0; i<jsonArr.length(); i++) {
 							//result = result + jsonArr.get(i).toString() + '\n';
@@ -281,7 +282,7 @@ public class ResultActivity extends ListActivity{
 									.getString("image1");
 							item.setMenu(menu);
 							
-							item.setRate(feedObj.getInt("rate"));
+							//item.setRate(feedObj.getInt("rate"));
 
 							feedItems.add(item);
 							
@@ -305,7 +306,7 @@ public class ResultActivity extends ListActivity{
 			super.onListItemClick(l, v, position, id);
 			Intent intent = new Intent(this, PlaceActivity.class);
 			
-			intent.putExtra(json, json);
+			intent.putExtra(json, position);
 			startActivity(intent);
 		}
 

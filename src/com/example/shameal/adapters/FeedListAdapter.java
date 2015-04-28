@@ -64,7 +64,7 @@ public class FeedListAdapter extends BaseAdapter {
                 .findViewById(R.id.address);
         TextView description = (TextView) convertView
                 .findViewById(R.id.description);
-        TextView rate = (TextView) convertView.findViewById(R.id.rate);
+        //TextView rate = (TextView) convertView.findViewById(R.id.rate);
         NetworkImageView image = (NetworkImageView) convertView
                 .findViewById(R.id.image);
         FeedImageView feedImageView = (FeedImageView) convertView
@@ -86,9 +86,9 @@ public class FeedListAdapter extends BaseAdapter {
             description.setVisibility(View.GONE);
         }
  
-        String r = "";
+        /*String r = "";
         r = r + item.getRate();
-        rate.setText(r);
+        rate.setText(r);*/
         image.setImageUrl(item.getImage(), imageLoader);
  
         // Feed image
