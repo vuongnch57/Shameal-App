@@ -87,7 +87,7 @@ public class ResultActivity extends ListActivity{
 					in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 					InputStream inputStream = client.getInputStream();
 //					printwriter.println(place); // write the message to output stream
-					printwriter.println("Cafe");
+					printwriter.println("Urban");
 					printwriter.flush();
 					
 					/*while ((bytesRead = inputStream.read(buffer)) != -1){
@@ -116,6 +116,11 @@ public class ResultActivity extends ListActivity{
 						String result = "";
 						int j=0;
 						while(j<10) {
+							msg = msg.replace("\\xfa", "ú");
+							msg = msg.replace("\\xf2", "ò");
+							msg = msg.replace("\\xfd", "ý");
+							msg = msg.replace("\\xf9", "ù");
+							msg = msg.replace("\\xe3", "ã");
 							msg = msg.replace("\\xe0", "à");
 							msg = msg.replace("\\xe1", "á");
 							msg = msg.replace("\\xe2", "â");
@@ -271,16 +276,16 @@ public class ResultActivity extends ListActivity{
 			                item.setName(feedObj.getString("name"));
 			                item.setAddress(feedObj.getString("address"));
 			                item.setDescription(feedObj.getString("description"));
-							String image = feedObj.isNull("avatar") ? null : feedObj
+							String avatar = feedObj.isNull("avatar") ? null : feedObj
 									.getString("avatar");
-							item.setImage(image);
+							item.setAvatar(avatar);
 							
 							String tele = feedObj.isNull("telephone") ? null : feedObj
 									.getString("telephone");
 
-							String menu = feedObj.isNull("image1") ? null : feedObj
+							String image = feedObj.isNull("image1") ? null : feedObj
 									.getString("image1");
-							item.setMenu(menu);
+							item.setImage(image);
 							
 							//item.setRate(feedObj.getInt("rate"));
 

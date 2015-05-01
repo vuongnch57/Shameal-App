@@ -119,7 +119,7 @@ public final class CaptureActivityHandler extends Handler {
       case R.id.ocr_decode_failed:
         state = State.PREVIEW;
         activity.setShutterButtonClickable(true);
-        Toast toast = Toast.makeText(activity.getBaseContext(), "Không thành công. Hay thử lại.", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(activity.getBaseContext(), "Không thành công. Hãy thử lại.", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.TOP, 0, 0);
         toast.show();
         break;

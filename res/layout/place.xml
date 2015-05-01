@@ -8,13 +8,198 @@
         android:id="@+id/slider"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-/>
+	/>
     
-    <TextView
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="7dp"
+            android:paddingLeft="5dp"
+             >
+ 
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitCenter" >
+            </com.android.volley.toolbox.NetworkImageView>
+ 
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="7dp" >
+ 
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#990000"
+                    android:textStyle="bold" />
+                
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp" 
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/feed_bg"
+	    android:orientation="vertical" >
+ 
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"
+	 
+	        android:layout_marginLeft="@dimen/feed_item_margin"
+	        android:layout_marginRight="@dimen/feed_item_margin"
+	        android:layout_marginTop="@dimen/feed_item_margin"
+	        android:background="@drawable/bg_parent_rounded_corner"
+	        android:orientation="vertical"
+	        android:paddingBottom="@dimen/feed_item_padding_top_bottom"
+	        android:paddingTop="@dimen/feed_item_padding_top_bottom" >
+ 
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:paddingLeft="5dp"
+	            android:paddingRight="5dp" >
+ 
+	            <LinearLayout 
+		        	android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical"
+		            
+		            >
+            
+			        <LinearLayout 
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:orientation="horizontal"
+			            android:paddingLeft="@dimen/feed_item_profile_info_padd"
+			            >
+                
+			            <ImageView 
+			                android:id="@+id/moneyI"
+			                android:layout_width="20dp"
+			                android:layout_height="20dp"
+			                android:scaleType="fitCenter"
+			                android:src="@drawable/money"/>
+			            
+			            <TextView
+			                    android:id="@+id/money"
+			                    android:layout_width="fill_parent"
+			                    android:layout_height="wrap_content"
+			                    android:paddingLeft="10dp"
+			                    android:textSize="12dp"
+			                    android:text="Đang cập nhật..."
+			                    android:textStyle="italic" 
+			                    android:scaleType="fitCenter"/>
+            
+        			</LinearLayout>
+        
+			        <LinearLayout 
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:orientation="horizontal"
+			            android:paddingLeft="@dimen/feed_item_profile_info_padd"
+			            android:paddingTop="5dp">
+			            
+			            <ImageView 
+			                android:id="@+id/telephoneI"
+			                android:layout_width="20dp"
+			                android:layout_height="20dp"
+			                android:scaleType="fitCenter"
+			                android:src="@drawable/tele"/>
+			            
+			            <TextView
+			                    android:id="@+id/telephone"
+			                    android:layout_width="fill_parent"
+			                    android:layout_height="wrap_content"
+			                    android:paddingLeft="10dp"
+			                    android:textSize="12dp"
+			                    android:text="Đang cập nhật..."
+			                    android:textStyle="italic" 
+			                    android:scaleType="fitCenter"/>
+			            
+			        </LinearLayout>
+        
+			        <LinearLayout 
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:orientation="horizontal"
+			            android:paddingLeft="@dimen/feed_item_profile_info_padd"
+			            android:paddingTop="5dp">
+			            
+			            <ImageView 
+			                android:id="@+id/timeI"
+			                android:layout_width="17dp"
+			                android:layout_height="17dp"
+			                android:scaleType="fitCenter"
+			                android:src="@drawable/time"/>
+			            
+			            <TextView
+			                    android:id="@+id/time"
+			                    android:layout_width="fill_parent"
+			                    android:layout_height="wrap_content"
+			                    android:paddingLeft="10dp"
+			                    android:textSize="12dp"
+			                    android:text="Đang cập nhật..."
+			                    android:textStyle="italic" 
+			                    android:scaleType="fitCenter"/>
+			            
+			        </LinearLayout>
+        
+			        <LinearLayout 
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:orientation="horizontal"
+			            android:paddingLeft="@dimen/feed_item_profile_info_padd"
+			            android:paddingTop="5dp">
+			            
+			            <ImageView 
+			                android:id="@+id/addressI"
+			                android:layout_width="17dp"
+			                android:layout_height="17dp"
+			                android:scaleType="fitCenter"
+			                android:src="@drawable/location"/>
+			            
+			            <TextView
+			                    android:id="@+id/address"
+			                    android:layout_width="fill_parent"
+			                    android:layout_height="wrap_content"
+			                    android:paddingLeft="10dp"
+			                    android:textSize="12dp"
+			                    android:text="Đang cập nhật..."
+			                    android:textStyle="italic" 
+			                    android:scaleType="fitCenter"/>
+			            
+			        </LinearLayout>
+            
+        		</LinearLayout>
+
+    </LinearLayout>
+ 
+</LinearLayout>
+    
+    
+    
+    </LinearLayout>
+    
+    <!-- <TextView
         android:id="@+id/textView1"
+        android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.21"
-        android:text="TextView" />
+        android:text="TextView" /> -->
 
 </LinearLayout>

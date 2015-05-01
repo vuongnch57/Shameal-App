@@ -8,71 +8,71 @@ package com.daimajia.slider.library;
 
 public final class R {
 	public static final class attr {
-		public static final int PagerIndicatorStyle = 0x7f01001b;
-		public static final int SliderStyle = 0x7f01001a;
-		public static final int auto_cycle = 0x7f010001;
-		public static final int indicator_visibility = 0x7f010000;
-		public static final int padding_bottom = 0x7f010011;
-		public static final int padding_left = 0x7f01000e;
-		public static final int padding_right = 0x7f01000f;
-		public static final int padding_top = 0x7f010010;
-		public static final int pager_animation = 0x7f010002;
-		public static final int pager_animation_span = 0x7f010003;
-		public static final int selected_color = 0x7f010006;
-		public static final int selected_drawable = 0x7f010008;
-		public static final int selected_height = 0x7f01000b;
-		public static final int selected_padding_bottom = 0x7f010015;
-		public static final int selected_padding_left = 0x7f010012;
-		public static final int selected_padding_right = 0x7f010013;
-		public static final int selected_padding_top = 0x7f010014;
-		public static final int selected_width = 0x7f01000a;
-		public static final int shape = 0x7f010005;
-		public static final int unselected_color = 0x7f010007;
-		public static final int unselected_drawable = 0x7f010009;
-		public static final int unselected_height = 0x7f01000d;
-		public static final int unselected_padding_bottom = 0x7f010019;
-		public static final int unselected_padding_left = 0x7f010016;
-		public static final int unselected_padding_right = 0x7f010017;
-		public static final int unselected_padding_top = 0x7f010018;
-		public static final int unselected_width = 0x7f01000c;
-		public static final int visibility = 0x7f010004;
+		public static final int PagerIndicatorStyle = 0x7f010041;
+		public static final int SliderStyle = 0x7f010040;
+		public static final int auto_cycle = 0x7f010027;
+		public static final int indicator_visibility = 0x7f010026;
+		public static final int padding_bottom = 0x7f010037;
+		public static final int padding_left = 0x7f010034;
+		public static final int padding_right = 0x7f010035;
+		public static final int padding_top = 0x7f010036;
+		public static final int pager_animation = 0x7f010028;
+		public static final int pager_animation_span = 0x7f010029;
+		public static final int selected_color = 0x7f01002c;
+		public static final int selected_drawable = 0x7f01002e;
+		public static final int selected_height = 0x7f010031;
+		public static final int selected_padding_bottom = 0x7f01003b;
+		public static final int selected_padding_left = 0x7f010038;
+		public static final int selected_padding_right = 0x7f010039;
+		public static final int selected_padding_top = 0x7f01003a;
+		public static final int selected_width = 0x7f010030;
+		public static final int shape = 0x7f01002b;
+		public static final int unselected_color = 0x7f01002d;
+		public static final int unselected_drawable = 0x7f01002f;
+		public static final int unselected_height = 0x7f010033;
+		public static final int unselected_padding_bottom = 0x7f01003f;
+		public static final int unselected_padding_left = 0x7f01003c;
+		public static final int unselected_padding_right = 0x7f01003d;
+		public static final int unselected_padding_top = 0x7f01003e;
+		public static final int unselected_width = 0x7f010032;
+		public static final int visibility = 0x7f01002a;
 	}
 	public static final class drawable {
-		public static final int indicator_corner_bg = 0x7f020009;
+		public static final int indicator_corner_bg = 0x7f020024;
 	}
 	public static final class id {
-		public static final int Accordion = 0x7f0c000d;
-		public static final int Background2Foreground = 0x7f0c000e;
-		public static final int CubeIn = 0x7f0c000f;
-		public static final int Default = 0x7f0c0010;
-		public static final int DepthPage = 0x7f0c0011;
-		public static final int Fade = 0x7f0c0012;
-		public static final int FlipHorizontal = 0x7f0c0013;
-		public static final int FlipPage = 0x7f0c0014;
-		public static final int Foreground2Background = 0x7f0c0015;
-		public static final int RotateDown = 0x7f0c0016;
-		public static final int RotateUp = 0x7f0c0017;
-		public static final int Stack = 0x7f0c0018;
-		public static final int Tablet = 0x7f0c0019;
-		public static final int ZoomIn = 0x7f0c001a;
-		public static final int ZoomOut = 0x7f0c001b;
-		public static final int ZoomOutSlide = 0x7f0c001c;
-		public static final int daimajia_indicator_wrapper = 0x7f0c002f;
-		public static final int daimajia_slider_image = 0x7f0c0032;
-		public static final int daimajia_slider_viewpager = 0x7f0c0037;
-		public static final int default_bottom_left_indicator = 0x7f0c003a;
-		public static final int default_bottom_right_indicator = 0x7f0c0039;
-		public static final int default_center_bottom_indicator = 0x7f0c0038;
-		public static final int default_center_top_indicator = 0x7f0c003b;
-		public static final int default_center_top_left_indicator = 0x7f0c003d;
-		public static final int default_center_top_right_indicator = 0x7f0c003c;
-		public static final int description = 0x7f0c002d;
-		public static final int description_layout = 0x7f0c0034;
-		public static final int invisible = 0x7f0c000b;
-		public static final int loading_bar = 0x7f0c0033;
-		public static final int oval = 0x7f0c001d;
-		public static final int rect = 0x7f0c001e;
-		public static final int visible = 0x7f0c000c;
+		public static final int Accordion = 0x7f0d0025;
+		public static final int Background2Foreground = 0x7f0d0026;
+		public static final int CubeIn = 0x7f0d0027;
+		public static final int Default = 0x7f0d0028;
+		public static final int DepthPage = 0x7f0d0029;
+		public static final int Fade = 0x7f0d002a;
+		public static final int FlipHorizontal = 0x7f0d002b;
+		public static final int FlipPage = 0x7f0d002c;
+		public static final int Foreground2Background = 0x7f0d002d;
+		public static final int RotateDown = 0x7f0d002e;
+		public static final int RotateUp = 0x7f0d002f;
+		public static final int Stack = 0x7f0d0030;
+		public static final int Tablet = 0x7f0d0031;
+		public static final int ZoomIn = 0x7f0d0032;
+		public static final int ZoomOut = 0x7f0d0033;
+		public static final int ZoomOutSlide = 0x7f0d0034;
+		public static final int daimajia_indicator_wrapper = 0x7f0d0047;
+		public static final int daimajia_slider_image = 0x7f0d0051;
+		public static final int daimajia_slider_viewpager = 0x7f0d0056;
+		public static final int default_bottom_left_indicator = 0x7f0d0059;
+		public static final int default_bottom_right_indicator = 0x7f0d0058;
+		public static final int default_center_bottom_indicator = 0x7f0d0057;
+		public static final int default_center_top_indicator = 0x7f0d005a;
+		public static final int default_center_top_left_indicator = 0x7f0d005c;
+		public static final int default_center_top_right_indicator = 0x7f0d005b;
+		public static final int description = 0x7f0d0045;
+		public static final int description_layout = 0x7f0d0053;
+		public static final int invisible = 0x7f0d0023;
+		public static final int loading_bar = 0x7f0d0052;
+		public static final int oval = 0x7f0d0035;
+		public static final int rect = 0x7f0d0036;
+		public static final int visible = 0x7f0d0024;
 	}
 	public static final class layout {
 		public static final int indicator_layout = 0x7f030003;
@@ -81,15 +81,15 @@ public final class R {
 		public static final int slider_layout = 0x7f030008;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f070000;
+		public static final int app_name = 0x7f080026;
 	}
 	public static final class style {
-		public static final int AndroidImageSlider_Attractive_Rect_Blue = 0x7f080001;
-		public static final int AndroidImageSlider_Corner_Oval_Orange = 0x7f080000;
-		public static final int AndroidImageSlider_Magnifier_Oval_Black = 0x7f080002;
+		public static final int AndroidImageSlider_Attractive_Rect_Blue = 0x7f070006;
+		public static final int AndroidImageSlider_Corner_Oval_Orange = 0x7f070005;
+		public static final int AndroidImageSlider_Magnifier_Oval_Black = 0x7f070007;
 	}
 	public static final class styleable {
-		public static final int[] PagerIndicator = { 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019 };
+		public static final int[] PagerIndicator = { 0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035, 0x7f010036, 0x7f010037, 0x7f010038, 0x7f010039, 0x7f01003a, 0x7f01003b, 0x7f01003c, 0x7f01003d, 0x7f01003e, 0x7f01003f };
 		public static final int PagerIndicator_padding_bottom = 13;
 		public static final int PagerIndicator_padding_left = 10;
 		public static final int PagerIndicator_padding_right = 11;
@@ -112,12 +112,12 @@ public final class R {
 		public static final int PagerIndicator_unselected_padding_top = 20;
 		public static final int PagerIndicator_unselected_width = 8;
 		public static final int PagerIndicator_visibility = 0;
-		public static final int[] SliderLayout = { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003 };
+		public static final int[] SliderLayout = { 0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029 };
 		public static final int SliderLayout_auto_cycle = 1;
 		public static final int SliderLayout_indicator_visibility = 0;
 		public static final int SliderLayout_pager_animation = 2;
 		public static final int SliderLayout_pager_animation_span = 3;
-		public static final int[] Themes = { 0x7f01001a, 0x7f01001b };
+		public static final int[] Themes = { 0x7f010040, 0x7f010041 };
 		public static final int Themes_PagerIndicatorStyle = 1;
 		public static final int Themes_SliderStyle = 0;
 	}

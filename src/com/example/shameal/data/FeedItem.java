@@ -2,22 +2,30 @@ package com.example.shameal.data;
 
 public class FeedItem {
     private int id,rate;
-    private String name, description, address,menu, image;
+    private String name, description, address, avatar, image;
  
     public FeedItem() {
     }
  
     public FeedItem(int id, String name, String address, String image, String description,
-            String menu, int rate) {
+            String avatar, int rate) {
         super();
         this.id = id;
         this.name = name;
         this.image = image;
         this.address = address;
         this.description = description;
-        this.menu = menu;
+        this.avatar = avatar;
         this.rate = rate;
     }
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 
 	public int getId() {
 		return id;
@@ -49,14 +57,6 @@ public class FeedItem {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public String getMenu() {
-		return menu;
-	}
-
-	public void setMenu(String menu) {
-		this.menu = menu;
 	}
 
 	public String getImage() {

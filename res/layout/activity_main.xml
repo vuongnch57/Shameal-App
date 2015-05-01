@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="182dp"
         android:onClick="onClick"
-        android:text="Capture now!" />
+        android:text="Bắt đầu" />
 
     <Button
         android:id="@+id/about"
@@ -25,6 +25,6 @@
         android:layout_below="@+id/captureButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
-        android:text="About us" />
+        android:text="Giới thiệu" />
 
 </RelativeLayout>
