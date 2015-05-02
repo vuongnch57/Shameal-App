@@ -86,8 +86,8 @@ public class ResultActivity extends ListActivity{
 					printwriter = new PrintWriter(client.getOutputStream());
 					in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 					InputStream inputStream = client.getInputStream();
-//					printwriter.println(place); // write the message to output stream
-					printwriter.println("Urban");
+					printwriter.println(place); // write the message to output stream
+					//printwriter.println("Urban");
 					printwriter.flush();
 					
 					/*while ((bytesRead = inputStream.read(buffer)) != -1){
@@ -116,6 +116,10 @@ public class ResultActivity extends ListActivity{
 						String result = "";
 						int j=0;
 						while(j<10) {
+							msg = msg.replace("\\xe9", "e");
+							msg = msg.replace("/", " ");
+							msg = msg.replace("\\xfa", "ú");
+							msg = msg.replace("\\xe8", "è");
 							msg = msg.replace("\\xfa", "ú");
 							msg = msg.replace("\\xf2", "ò");
 							msg = msg.replace("\\xfd", "ý");
