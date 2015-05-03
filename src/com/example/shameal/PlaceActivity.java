@@ -124,8 +124,9 @@ public class PlaceActivity extends Activity{
 			e.printStackTrace();
 		}
 		
-		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#488214")));
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#fd482f")));
         getActionBar().setIcon(
                    new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 }

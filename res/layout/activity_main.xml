@@ -6,25 +6,40 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
-    <Button
+    tools:context=".MainActivity" 
+    
+    android:background="@drawable/coffee_bokeh_bg">
+	<LinearLayout
+	    android:orientation="vertical"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:padding="10dp"
+	    >
+		
+	    <Button
         android:id="@+id/captureButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="182dp"
+        android:textColor="#ffffff"
+        android:padding="10dp"
         android:onClick="onClick"
         android:text="Bắt đầu" />
 
-    <Button
-        android:id="@+id/about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/captureButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="Giới thiệu" />
+	    <Button
+	        android:id="@+id/about"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/captureButton"
+	        android:layout_centerHorizontal="true"
+	        android:textColor="#ffffff"
+	        android:padding="10dp"
+	        android:layout_marginTop="15dp"
+	        android:text="Giới thiệu" />
+	</LinearLayout>
+    
 
 </RelativeLayout>

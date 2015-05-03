@@ -56,12 +56,13 @@ public class ResultActivity extends ListActivity{
 		place = bundle.getString(CaptureActivity.text);
 		setContentView(R.layout.result);
 		numOfResult = (TextView) findViewById(R.id.num_of_result);
-		ocrResultText = (TextView)findViewById(R.id.ocr_result_text);
-		ocrResultText.setText(place);
+		/*ocrResultText = (TextView)findViewById(R.id.ocr_result_text);
+		ocrResultText.setText(place);*/
 
-		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#488214")));
+		getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#fd482f")));
         getActionBar().setIcon(
                    new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 		listView = (ListView) findViewById(android.R.id.list);
         feedItems = new ArrayList<FeedItem>();
@@ -86,8 +87,8 @@ public class ResultActivity extends ListActivity{
 					printwriter = new PrintWriter(client.getOutputStream());
 					in = new BufferedReader(new InputStreamReader(client.getInputStream()));
 					InputStream inputStream = client.getInputStream();
-					printwriter.println(place); // write the message to output stream
-					//printwriter.println("Urban");
+					//printwriter.println(place); // write the message to output stream
+					printwriter.println("Ho\\\\xe0ng Anh");
 					printwriter.flush();
 					
 					/*while ((bytesRead = inputStream.read(buffer)) != -1){
@@ -116,8 +117,13 @@ public class ResultActivity extends ListActivity{
 						String result = "";
 						int j=0;
 						while(j<10) {
+							msg = msg.replace("\\xed", "í");
+							msg = msg.replace("\\xdd", "Ý");
+							//msg = msg.replace("',u'", ", ");
+							msg = msg.replace("\\xec", "ì");
+							msg = msg.replace("\\xf4", "ô");
 							msg = msg.replace("\\xe9", "e");
-							msg = msg.replace("/", " ");
+							//msg = msg.replace("/", " ");
 							msg = msg.replace("\\xfa", "ú");
 							msg = msg.replace("\\xe8", "è");
 							msg = msg.replace("\\xfa", "ú");
@@ -126,13 +132,13 @@ public class ResultActivity extends ListActivity{
 							msg = msg.replace("\\xf9", "ù");
 							msg = msg.replace("\\xe3", "ã");
 							msg = msg.replace("\\xe0", "à");
-							msg = msg.replace("\\xe1", "á");
 							msg = msg.replace("\\xe2", "â");
 							msg = msg.replace("\\xea", "ê");
 							msg = msg.replace("\\xf5", "õ");
 							msg = msg.replace("\\xe9/", "e ");
 							msg = msg.replace("\\u00e0", "à");
 							msg = msg.replace("\\u00e1", "á");
+							msg = msg.replace("\\xe1", "á");
 							msg = msg.replace("\\u1ea3", "ả");
 							msg = msg.replace("\\u00e3", "ã");
 							msg = msg.replace("\\u1ea1", "ạ");						

@@ -4,14 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/ocr_result_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="30dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Result" />
+        android:text="Result" /> -->
 
     <TextView
         android:id="@+id/num_of_result"
@@ -20,7 +20,7 @@
         android:textSize="15dp"
         android:gravity="center"
         android:layout_marginTop="5dp"
-        android:text="Number of result" />
+         />
     
     <ListView
         android:id="@android:id/list"

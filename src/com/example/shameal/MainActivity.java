@@ -37,9 +37,10 @@ public class MainActivity extends Activity {
 			setContentView(R.layout.activity_main);
 			startCapture = (Button) findViewById(R.id.captureButton);
 			
-			getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#488214")));
+			getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#fd482f")));
 	        getActionBar().setIcon(
 	                   new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+	        
 		}
 	}
 	

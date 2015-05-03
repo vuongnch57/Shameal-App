@@ -38,7 +38,7 @@ public final class R {
 		public static final int visibility = 0x7f010004;
 	}
 	public static final class drawable {
-		public static final int indicator_corner_bg = 0x7f020006;
+		public static final int indicator_corner_bg = 0x7f020007;
 	}
 	public static final class id {
 		public static final int Accordion = 0x7f0c000d;
@@ -59,13 +59,13 @@ public final class R {
 		public static final int ZoomOutSlide = 0x7f0c001c;
 		public static final int daimajia_indicator_wrapper = 0x7f0c002f;
 		public static final int daimajia_slider_image = 0x7f0c0039;
-		public static final int daimajia_slider_viewpager = 0x7f0c003e;
-		public static final int default_bottom_left_indicator = 0x7f0c0041;
-		public static final int default_bottom_right_indicator = 0x7f0c0040;
-		public static final int default_center_bottom_indicator = 0x7f0c003f;
-		public static final int default_center_top_indicator = 0x7f0c0042;
-		public static final int default_center_top_left_indicator = 0x7f0c0044;
-		public static final int default_center_top_right_indicator = 0x7f0c0043;
+		public static final int daimajia_slider_viewpager = 0x7f0c003d;
+		public static final int default_bottom_left_indicator = 0x7f0c0040;
+		public static final int default_bottom_right_indicator = 0x7f0c003f;
+		public static final int default_center_bottom_indicator = 0x7f0c003e;
+		public static final int default_center_top_indicator = 0x7f0c0041;
+		public static final int default_center_top_left_indicator = 0x7f0c0043;
+		public static final int default_center_top_right_indicator = 0x7f0c0042;
 		public static final int description = 0x7f0c002d;
 		public static final int description_layout = 0x7f0c003b;
 		public static final int invisible = 0x7f0c000b;
